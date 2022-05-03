@@ -1,12 +1,17 @@
 header{
-    height: 10%;
+    height: 6rem;
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    box-shadow: 2px 2px 5px 3px;
+    color: black ;
 }
 
 nav{
     display: flex;
     flex-direction: row;
-    background-color: rgb(0, 0, 0);/*rgb(29, 29, 29);*/
+    background-color: rgb(29, 29, 29);  
     height: 100%;
     align-items: center;
     width: 100%;
@@ -17,33 +22,60 @@ nav{
     list-style: none;
     display: flex;
     margin-right: auto;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
 }
 
-#nav-list > li{
-    margin-left: 20px;
-    margin-right: 20px;
+#nav-list > li, #nav-list > a{
+    padding-left: 25px;
+    padding-right: 25px;
     font-size: 21px;
+    text-decoration: none;
+    color: black;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav-list > li:hover, #nav-list > a:hover{
+    background-color: rgb(76, 81, 86);
+    transition: all 300ms ease ;
+}
+
+#nav-list > li:not(:hover), #nav-list > a:not(:hover){
+    background-color: rgb(29, 29, 29);  
+    transition: all 300ms ease ;
 }
 
 #logo{
     margin: 20px 30px 20px 35px;
     height: 70%;
     border-radius: 20px;
+    border: solid black 4px;
 }
 
-#sign-in-button, #create-button, #sign-up-button{
+.sign-in-button, #create-button, #sign-up-button{
     margin-left: 20px;
     margin-right: 20px;
 }
 
 
 main{
-    height: 90%;
+    min-height: 87.3vh;
+    background-color:  rgb(16, 16, 16);
+    padding-bottom: 4.5rem;
+    width: 100%;
 }
 
 #intro{
     width: 100%;
-    height: 99%;
+    height: 45rem;
+    overflow: hidden;
+    margin-top: -20px;
+    filter: blur(1.5px);
 }
 
 #create-button{
@@ -55,7 +87,7 @@ main{
     border-color: rgb(104, 104, 104);
 }
 
-#sign-in-button{
+.sign-in-button{
     background-color: rgb(255, 255, 255);
     height: 60%;
     width: 9%;
@@ -64,16 +96,497 @@ main{
     color: rgb(0, 0, 0);
     border: solid 3px rgb(255, 255, 255);
     margin-right: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.login, .help, .about, .startups{
+    padding-bottom:  4.5rem;
+    width: 100%;
+    min-height: 87.3vh;
+    background-color: rgb(16, 16, 16);
+}
+
+.register{
+    min-height: 87.3vh;
+    padding-bottom:  4.5rem;
+    background-color: rgb(16, 16, 16);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.register-form{
+    min-width: 35%;
+    height: 550px;
+    background-color: rgb(50, 47, 47);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    border: solid black 1px;
+}
+
+.reg-form-title{
+  margin-top: 15px;
+}
+
+.name-surname-input, .country-city-input, .login-password-input{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.name-surname > h4:first-child{
+  margin-left: -120px;
+  font-size: 20px;
+  padding-right: 100px;
+  margin-bottom: -20px;
+}
+
+.name-surname > h4:last-child{
+  margin-left: 60px;
+  margin-right: -60px;
+  font-size: 20px;
+}
+
+.country-city > h4:first-child{
+  margin-left: -170px;
+  font-size: 20px;
+  padding-right: 100px;
+  margin-bottom: -20px;
+}
+
+.country-city > h4:last-child{
+  margin-left: 60px;
+  margin-right: -60px;
+  font-size: 20px;
+}
+
+.login-password > h4:first-child{
+  margin-left: -145px;
+  font-size: 20px;
+  padding-right: 100px;
+  margin-bottom: -20px;
+}
+
+.login-password > h4:last-child{
+  margin-left: 70px;
+  margin-right: -60px;
+  font-size: 20px;
+}
+
+.name-surname-input > input:first-child, .country-city-input > input:first-child, .login-password-input > input:first-child{
+  margin-left: 20px;
+  border-radius: 5px;
+  border: none;
+  width: 175px;
+  height: 35px;
+}
+
+.name-surname-input > input:last-child, .country-city-input > input:last-child, .login-password-input > input:last-child{
+  margin-left: 40px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  width: 185px;
+  height: 35px;
+}
+
+
+
+.email-input{
+  border-radius: 5px;
+  border: none;
+  width: 400px;
+  height: 35px;
+  margin-left: 20px;
+}
+
+.register-form > h4{
+  align-self: flex-start;
+  margin-left: 90px;
+}
+
+.register-form > hr{
+  width: 80%;
+  height: 6px;
+  color: white;
+  border: none;
+  margin-left: 19px;
+}
+.name-surname{
+  display: flex;
+}
+
+.register-form > button{
+  width: 200px;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: none;
+  margin-left: 20px;
+}
+
+.reg-login{
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  margin-left: 20px;
+  margin-top: -3px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reg-login:hover{
+  color: black;
+  transition: all 300ms ease ;
+  background-color: rgb(122, 122, 122);
+}
+
+.reg-login:not(:hover){
+  color: black;
+  transition: all 300ms ease ;
+  background-color: rgb(255, 255, 255);
 }
 
 #sign-up-button{
     background-color: rgb(0, 0, 0);
     height: 60%;
     width: 9%;
-    font-size: 18px;
+    font-size: 20px;
     border-radius: 6px;
     color: white;
     border: solid 3px black;
     margin-left: 10px;
     margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.sign-in-button:hover{
+  background-color: rgb(76, 81, 86);
+  transition: all 300ms ease ;
+  border: solid 3px rgb(76, 81, 86);
+  color: black;
+}
+
+#sign-up-button:hover{
+  background-color: rgb(76, 81, 86);
+  transition: all 300ms ease ;
+  border: solid 3px rgb(76, 81, 86);
+  color: white;
+}
+
+.sign-in-button:not(:hover){
+    background-color: rgb(255, 255, 255);
+    transition: all 300ms ease ;
+    border: solid 3px rgb(255, 255, 255);
+  }
+  
+  #sign-up-button:not(:hover){
+      background-color: rgb(0, 0, 0);
+      transition: all 300ms ease ;
+      border: solid 3px rgb(0, 0, 0);
+      color: white;
+    }
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    color:  rgb(16, 16, 16);
+ }
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:  4.5rem ;
+  width: 100%;
+  color: black;
+  position:absolute;
+  bottom: 0;
+  background-color: rgb(29, 29, 29);
+  box-shadow: 5px 1px 3px 4px;
+  /* overflow: hidden; */
+}
+
+.footer > h5{
+  margin-bottom: 0;
+}
+
+
+/*###############################################################################################################*/
+
+.first-text {
+    line-height: 85%;
+    position: absolute;
+    top: 18%;
+    left: 42.2%;
+    transform: translate(-32%, -50%);
+    font-size: 107px;
+    font-weight: bold;
+    font-family: "Bebas Neue", cursive;
+    max-width: 890px;
+    text-align: center;
+  }
+  
+  .or {
+    font-size: 70px;
+    font-weight: bold;
+    font-family: "Bebas Neue", cursive;
+  }
+  
+  .first-line {
+    font-size: 107px;
+    font-weight: bold;
+    font-family: "Bebas Neue", cursive;
+  }
+  
+  .start-up-word {
+    font-size: 127px;
+    font-weight: bold;
+    font-family: "Bebas Neue", cursive;
+    letter-spacing: 10px;
+  }
+  
+  .reg-button {
+    position: absolute;
+    bottom: 68%;
+    left: 28%;
+    font-size: 50px;
+    background: rgba(255, 255, 255, 0.4);
+    border: solid black 4px;
+    border-radius: 20px;
+    padding: 10px;
+  }
+  .create-button {
+    position: absolute;
+    bottom:68%;
+    right: 28%;
+    font-size: 50px;
+    background: rgba(255, 255, 255, 0.4);
+    border: solid black 4px;
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+.create-button:hover,.reg-button:hover{
+  background: rgba(255, 255, 255, 0.7);
+  transition: all 300ms ease ;
+}
+
+.create-button:not(:hover),.reg-button:not(:hover){
+  background: rgba(255, 255, 255, 0.4);
+  transition: all 300ms ease ;
+}
+
+  .down {
+    font-size: large;
+    position: absolute;
+    bottom: 10px;
+    right: 100px;
+    margin-bottom: 0px;
+  }
+  .title2 {
+    font-size: 40px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+  .main-text {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-right: 40%;
+  }
+  
+  .behind-last {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 1000px;
+    margin-bottom: 20px;
+    margin-right: 120px;
+  }
+  .texty {
+    background-color: gray;
+    text-align: left;
+    text-decoration: dotted;
+    text-emphasis-color: white;
+  }
+  .last {
+    margin-left: 185px;
+    margin-top: 10px;
+    margin-right: 195px;
+    margin-bottom: 0px;
+    font-size: 30px;
+  }
+
+.first-parag{
+  color: azure;
+  display: flex;
+  flex-direction: row;
+}
+
+.first-parag > div > p {
+  max-width: 800px;
+  margin: 30px;
+font-size: 20px;
+}
+
+.first-parag > div > h3 {
+  margin: 40px;
+  font-size: 30px;
+}
+
+.carcar{
+  width: 600px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.carim{
+  border-radius: 10px;
+  height: 390px;
+}
+
+.carcar1{
+  width: 600px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+
+.second-parag{
+  color: azure;
+  display: flex;
+  flex-direction: row;
+}
+
+.second-parag > div > p {
+  max-width: 800px;
+  margin: 30px;
+font-size: 20px;
+display: flex;
+justify-content: end;
+}
+
+.second-parag > div > h3 {
+  margin: 40px;
+  font-size: 30px;
+  display: flex;
+  justify-content: end;
+}
+
+.login{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+
+.login-form{
+  background-color: rgb(50, 47, 47);
+  min-width: 40%;
+  height: 400px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.login-title{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  color: white;
+}
+
+.login-reg{
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 5px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fields{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 100px;
+}
+
+.fields > input{
+  width: 75%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  height: 35px;
+}
+
+.fields > h4{
+  margin-top: 10px;
+}
+.login-form > hr{
+  width: 80%;
+  height: 20px;
+  color: white;
+  border: none;
+  margin-left: 19px;
+}
+
+.login-form > button{
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.login-reg:hover{
+  color: black;
+  transition: all 300ms ease ;
+  background-color: rgb(122, 122, 122);
+}
+
+.login-reg:not(:hover){
+  color: black;
+  transition: all 300ms ease ;
+  background-color: rgb(255, 255, 255);
+}
+
+.fields > h4:first-child{
+  margin-top: 0;
 }

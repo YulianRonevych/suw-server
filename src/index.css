@@ -8,9 +8,18 @@
 html, body, #root, .App{
   background-color: rgb(52, 51, 54);
   margin: 0;
-  height: 100%;
+  position: relative;
+  min-height: 100%;
 }
 
 ::-webkit-scrollbar {
   width: 0;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+
+input, textarea{
+  text-indent: 10px;
 }
