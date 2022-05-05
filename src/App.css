@@ -140,6 +140,7 @@ main{
 .name-surname-input, .country-city-input, .login-password-input{
   margin-left: 20px;
   margin-right: 20px;
+  position: relative;
 }
 
 .name-surname > h4:first-child{
@@ -485,7 +486,7 @@ font-size: 20px;
   margin: 30px;
 font-size: 20px;
 display: flex;
-justify-content: end;
+justify-content: flex-end;
 }
 
 .second-parag > div > h3 {
@@ -589,4 +590,36 @@ justify-content: end;
 
 .fields > h4:first-child{
   margin-top: 0;
+}
+
+.inv-username{
+  position: absolute;
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+  color: red;
+  top: 69%;
+  left: 7%;
+}
+
+.inv-password{
+  position: absolute;
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+  color: red;
+  top: 69%;
+  left: 57%;
+}
+
+.inv-email{
+  position: relative;
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+  color: red;
+  margin-right: 250px;
+  margin-top: 2px;
+  margin-bottom: -20px;
+  display: none;
 }
