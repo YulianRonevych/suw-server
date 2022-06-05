@@ -8,6 +8,11 @@ app.use(cors());
 app.use(express.json())
 app.use(express.static('images'))
 
+
+app.get('/', function(req,res){
+    res.send("Server");
+})
+
 app.post('/register', function(req,res){
    res.status(200).send('Success');
    const data = req.body;
@@ -180,7 +185,7 @@ app.get('/startups', function(req,res){
 })
 /*Send single start-up data*/
 
-app.listen(process.env.PORT | 5000, function(){
+app.listen(process.env.PORT || 5000, function(){
     console.log('Server is listening...');
 })
 
