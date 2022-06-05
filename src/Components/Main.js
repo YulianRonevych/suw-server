@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Carousel from 'react-bootstrap/Carousel'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { Link } from "react-router-dom";
 
-export default function Main(){
 
+export default function Main(props){
 
     return(
         <main>
@@ -16,9 +17,9 @@ export default function Main(){
           <br />
           <span className="start-up-word">start-ups</span>
         </div>
-        <button class="reg-button"> Sing up </button>
+        {!props.currentUser?.user_username && <Link class="reg-button" to='/register'> Sing up </Link>}
 
-        <button class="create-button">Create start-up</button>
+        {props.currentUser?.user_username ? <Link class="create-button" to='/createStartUp' style={{right: '38%'}}>Create start-up</Link> : <Link class="create-button" to='/register'>Create start-up</Link>}
         <div>
           <button class="down">Click Me!</button>
         </div>

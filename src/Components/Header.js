@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Modal } from "bootstrap";
 
-export default function Header(){
+export default function Header(props){
+
+    function handleLogOut(){
+        localStorage.setItem("currentUser", null);
+        props.setCurrentUser(null);
+        window.location.href="http://localhost:3000";
+    }
+
     return(
         <header>
             <nav>
@@ -20,13 +28,10 @@ export default function Header(){
                     <li>Help</li>
                     </Link>
                 </ul>
-                {/* <button id="create-button">Create start-up</button> */}
-                <Link  className="sign-in-button" to='/login'>
-                Sign in
-                </Link>
-                <Link  id="sign-up-button" to='/register'>
-                Sign up
-                </Link>
+                {props.currentUser?.user_username && <Link id="create-button" to='/createStartUp'>Create start-up</Link>}
+                {!props.currentUser?.user_username && <Link  className="sign-in-button" to='/login'>Sign in</Link>}
+                {!props.currentUser?.user_username && <Link  id="sign-up-button" to='/register'>Sign up</Link>}
+                {props.currentUser?.user_username && <button id="sign-up-button" onClick={handleLogOut}>Sign out</button>}
             </nav>
         </header>
     )
